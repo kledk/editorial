@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/addons/enforce-layout/index.tsx"],"names":[],"mappings":"AACA,OAAO,EAML,IAAI,EAIL,MAAM,OAAO,CAAC;AAMf,oBAAY,cAAc,GAAG;IAC3B,IAAI,EAAE,IAAI,CAAC;IACX,OAAO,EAAE;QAAE,IAAI,EAAE,MAAM,CAAA;KAAE,CAAC;CAC3B,CAAC;AAEF,wBAAgB,kBAAkB,CAAC,KAAK,EAAE;IAAE,MAAM,EAAE,cAAc,EAAE,CAAA;CAAE,QA+HrE"}

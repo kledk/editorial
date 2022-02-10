@@ -1,33 +1,6 @@
+// A 'solution' tsconfig, used to support Typescript Project References
+// https://www.typescriptlang.org/docs/handbook/project-references.html#overall-structure
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "declarationMap": true,
-    "downlevelIteration": false,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "incremental": true,
-    "lib": ["ES6", "dom", "ESNext"],
-    "jsx": "react-jsx",
-    "module": "es2020",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "outDir": "dist",
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "ES6"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "example"]
+  "files": [],
+  "references": [{ "path": "packages/core" }, { "path": "packages/example" }]
 }
