@@ -4,13 +4,13 @@ import { useSlate, ReactEditor } from "slate-react";
 import { Node, Editor, Transforms } from "slate";
 import { Manager, Reference, Popper } from "react-popper";
 import styled from "styled-components";
-import { ButtonBase } from "../../ui/button-base";
 import { useHoveredNode } from "./use-hovered-node";
 
-export const BlockInsertBtn = styled(ButtonBase)`
+export const BlockInsertBtn = styled.button.attrs({ contentEditable: false })`
   @media print {
     display: none;
   }
+  cursor: pointer;
   user-select: none;
   border: none;
   background: transparent;
@@ -21,12 +21,12 @@ export const BlockInsertBtn = styled(ButtonBase)`
   border-radius: ${25 / 2}px;
   &:before {
     content: "+";
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: serif;
     font-weight: normal;
     font-size: 28px;
     color: #ccc;
     position: absolute;
-    top: -3px;
+    top: -10px;
     left: 4px;
     padding: 0;
     margin: 0;
@@ -72,7 +72,7 @@ export function BlockInsert(props: { children?: React.ReactNode }) {
       try {
         const [rootNode] = Editor.node(editor, {
           anchor: Editor.start(editor, []),
-          focus: Editor.end(editor, [])
+          focus: Editor.end(editor, []),
         });
         if (rootNode && Node.isNode(rootNode)) {
           const firstDOMPoint = ReactEditor.toDOMNode(editor, rootNode);
@@ -109,7 +109,7 @@ export function BlockInsert(props: { children?: React.ReactNode }) {
             ref={ref}
             style={{ position: "absolute", top: coords[0], left: coords[1] }}
           >
-            <BlockInsertBtn onClick={handleBlockInsert} />
+            <BlockInsertBtn style={{color: 'red'}} onClick={handleBlockInsert} />
           </div>
         )}
       </Reference>
@@ -120,9 +120,9 @@ export function BlockInsert(props: { children?: React.ReactNode }) {
             {
               name: "offset",
               options: {
-                offset: [25, 10]
-              }
-            }
+                offset: [25, 10],
+              },
+            },
           ]}
         >
           {({ ref, style, placement, arrowProps }) => (
@@ -130,7 +130,7 @@ export function BlockInsert(props: { children?: React.ReactNode }) {
               ref={ref}
               style={{ ...style, zIndex: 20 }}
               data-placement={placement}
-              onMouseDown={e => {
+              onMouseDown={(e) => {
                 if (!e.isDefaultPrevented()) {
                   e.preventDefault();
                   setShowMenu(false);

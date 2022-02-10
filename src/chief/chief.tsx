@@ -79,9 +79,7 @@ export const Chief = React.memo(function (props: {
       <Slate editor={chiefValue.editor} value={value} onChange={onChange}>
         <ChiefContext.Provider value={chiefValue}>
           <SavedSelectionProvider>
-            <ThemeProvider theme={_theme}>
-              <React.Fragment>{children}</React.Fragment>
-            </ThemeProvider>
+            <React.Fragment>{children}</React.Fragment>
           </SavedSelectionProvider>
         </ChiefContext.Provider>
       </Slate>

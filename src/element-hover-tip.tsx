@@ -58,7 +58,7 @@ export function ElementHoverTip(
             placement={placement}
             style={arrowProps.style}
           />
-          <StyledTooltipBody>{tip}</StyledTooltipBody>
+          {tip}
         </Tooltip>
       )}
     </Overlay>
@@ -102,7 +102,7 @@ export const StyledTooltipBody = styled(UiWrap)`
   div:nth-child(2) {
     font-weight: bold;
     font-size: 0.7em;
-    color: ${props => props.theme.colors.gray[400]};
+    color: ${(props) => props.theme.colors.gray[400]};
   }
 `;
 
@@ -112,7 +112,7 @@ export const Arrow = styled.div<{ placement: string }>`
   height: 0;
   border-style: solid;
 
-  ${p => {
+  ${(p) => {
     switch (p.placement) {
       case "left":
         return css`
@@ -148,7 +148,7 @@ export const Tooltip = styled.div<{ placement: string }>`
   position: absolute;
   padding: 0 5px;
 
-  ${p => {
+  ${(p) => {
     switch (p.placement) {
       case "left":
         return css`

@@ -39,6 +39,7 @@ import {
   usePlugin,
   useOnKeyDown,
   getNodeFromSelection,
+  defaultTheme,
 } from "../../src/index";
 import {
   Node,
@@ -49,7 +50,7 @@ import {
   Transforms,
   Descendant,
 } from "slate";
-import { css } from "styled-components";
+import { css, ThemeProvider } from "styled-components";
 import MdiIcon from "@mdi/react";
 import {
   mdiFormatParagraph,
@@ -74,6 +75,7 @@ import redia from "./redia.json";
 import { ColumnsAddon } from "./ColumnsAddon";
 import { ContentStyle } from "./ContentStyle";
 import { useSlate } from "slate-react";
+import { merge } from "lodash";
 
 function TestAddon() {
   return null;
@@ -143,154 +145,154 @@ function App() {
 
   return (
     <div style={{ flex: 1 }}>
-      <ContentStyle>
-        <Chief
-          value={value}
-          onChange={(value) => setValue(value)}
-          theme={{
-            overrides: {
-              // StyledToolbarBtn: css`
-              //   background-color: transparent;
-              //   color: white;
-              //   padding: 10px;
-              //   &:hover {
-              //     background-color: ${props =>
-              //       // @ts-ignore
-              //       props.disabled ? undefined : "#2d2d2d"};
-              //   }
-              // `,
-              // StyledToolBox: css`
-              //   border-radius: 20px;
-              //   background-color: black;
-              // `,
-              // ui: css`
-              //   /* font-family: monospace; */
-              // `
-            },
-          }}
-        >
-          <LabelsAddon labels={editorLabels} />
-          <ParagraphAddon />
-          <BoldAddon />
-          <ItalicAddon />
-          <UnderlineAddon />
-          <StrikethroughAddon />
-          <HeadingsAddon />
-          <ImageAddon />
-          <PreventNewlineAddon />
-          <PreventNewlineAddon />
-          <LinkAddon />
-          <ListsAddon />
-          <TextColorAddon />
-          <div
-            style={{
-              marginLeft: 40,
-            }}
-          >
-            <BlockInsert>
-              <StyledToolBox>
-                <ToolsWrapper>
-                  <ParagraphControl>
-                    {(props) => <Icon path={mdiFormatParagraph} {...props} />}
-                  </ParagraphControl>
-                  <HeadingControl heading="h1">
-                    {(props) => <Icon path={mdiFormatHeader1} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h2">
-                    {(props) => <Icon path={mdiFormatHeader2} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h3">
-                    {(props) => <Icon path={mdiFormatHeader3} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h4">
-                    {(props) => <Icon path={mdiFormatHeader4} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h5">
-                    {(props) => <Icon path={mdiFormatHeader5} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h6">
-                    {(props) => <Icon path={mdiFormatHeader6} {...props} />}
-                  </HeadingControl>
-                  <ListControl type="ordered-list">
-                    {(props) => (
-                      <Icon path={mdiFormatListNumbered} {...props} />
-                    )}
-                  </ListControl>
-                  <ListControl type="unordered-list">
-                    {(props) => (
-                      <Icon path={mdiFormatListBulleted} {...props} />
-                    )}
-                  </ListControl>
-                  <ImageControl>
-                    {(props) => <Icon path={mdiImage} {...props} />}
-                  </ImageControl>
-                </ToolsWrapper>
-              </StyledToolBox>
-            </BlockInsert>
-            <HoverTools>
-              <StyledToolBox>
-                <ToolsWrapper>
-                  <BoldControl>
-                    {(props) => <Icon path={mdiFormatBold} {...props} />}
-                  </BoldControl>
-                  <ItalicControl>
-                    {(props) => <Icon path={mdiFormatItalic} {...props} />}
-                  </ItalicControl>
-                  <StrikethroughControl>
-                    {(props) => (
-                      <Icon path={mdiFormatStrikethrough} {...props} />
-                    )}
-                  </StrikethroughControl>
-                  <UnderlineControl>
-                    {(props) => <Icon path={mdiFormatUnderline} {...props} />}
-                  </UnderlineControl>
-                  <HeadingControl heading="h1">
-                    {(props) => <Icon path={mdiFormatHeader1} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h2">
-                    {(props) => <Icon path={mdiFormatHeader2} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h3">
-                    {(props) => <Icon path={mdiFormatHeader3} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h4">
-                    {(props) => <Icon path={mdiFormatHeader4} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h5">
-                    {(props) => <Icon path={mdiFormatHeader5} {...props} />}
-                  </HeadingControl>
-                  <HeadingControl heading="h6">
-                    {(props) => <Icon path={mdiFormatHeader6} {...props} />}
-                  </HeadingControl>
-                  <LinkControl>
-                    {(props) => <Icon path={mdiLink} {...props} />}
-                  </LinkControl>
-                  <TextColorControl
-                    colors={[
-                      "#1e2139",
-                      "#ff5c00",
-                      "#cc3e4a",
-                      "#ffc854",
-                      "#31b27b",
-                      "#2d5c7c",
-                      "#237777",
-                      "#376c6c",
-                      "#63a5a5",
-                      "#9d5961",
-                    ]}
-                  >
-                    {(props) => <Icon path={mdiFormatColorText} {...props} />}
-                  </TextColorControl>
-                </ToolsWrapper>
-              </StyledToolBox>
-            </HoverTools>
-            <Editor
-              spellCheck={false}
-              style={{ overflow: "auto", minHeight: 500 }}
-            ></Editor>
-          </div>
-        </Chief>
-      </ContentStyle>
+      <ThemeProvider
+        theme={merge(defaultTheme, {
+          overrides: {
+            // StyledToolbarBtn: css`
+            //   background-color: transparent;
+            //   color: white;
+            //   padding: 10px;
+            //   &:hover {
+            //     background-color: ${props =>
+            //       // @ts-ignore
+            //       props.disabled ? undefined : "#2d2d2d"};
+            //   }
+            // `,
+            // StyledToolBox: css`
+            //   border-radius: 20px;
+            //   background-color: black;
+            // `,
+            // ui: css`
+            //   /* font-family: monospace; */
+            // `
+          },
+        })}
+      >
+        <ContentStyle>
+          <Chief value={value} onChange={(value) => setValue(value)}>
+            <LabelsAddon labels={editorLabels} />
+            <ParagraphAddon />
+            <BoldAddon />
+            <ItalicAddon />
+            <UnderlineAddon />
+            <StrikethroughAddon />
+            <HeadingsAddon />
+            <ImageAddon />
+            <PreventNewlineAddon />
+            <PreventNewlineAddon />
+            <LinkAddon />
+            <ListsAddon />
+            <TextColorAddon />
+            <div
+              style={{
+                marginLeft: 40,
+              }}
+            >
+              <BlockInsert>
+                <StyledToolBox>
+                  <ToolsWrapper>
+                    <ParagraphControl>
+                      {(props) => <Icon path={mdiFormatParagraph} {...props} />}
+                    </ParagraphControl>
+                    <HeadingControl heading="h1">
+                      {(props) => <Icon path={mdiFormatHeader1} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h2">
+                      {(props) => <Icon path={mdiFormatHeader2} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h3">
+                      {(props) => <Icon path={mdiFormatHeader3} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h4">
+                      {(props) => <Icon path={mdiFormatHeader4} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h5">
+                      {(props) => <Icon path={mdiFormatHeader5} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h6">
+                      {(props) => <Icon path={mdiFormatHeader6} {...props} />}
+                    </HeadingControl>
+                    <ListControl type="ordered-list">
+                      {(props) => (
+                        <Icon path={mdiFormatListNumbered} {...props} />
+                      )}
+                    </ListControl>
+                    <ListControl type="unordered-list">
+                      {(props) => (
+                        <Icon path={mdiFormatListBulleted} {...props} />
+                      )}
+                    </ListControl>
+                    <ImageControl>
+                      {(props) => <Icon path={mdiImage} {...props} />}
+                    </ImageControl>
+                  </ToolsWrapper>
+                </StyledToolBox>
+              </BlockInsert>
+              <HoverTools>
+                <StyledToolBox>
+                  <ToolsWrapper>
+                    <BoldControl>
+                      {(props) => <Icon path={mdiFormatBold} {...props} />}
+                    </BoldControl>
+                    <ItalicControl>
+                      {(props) => <Icon path={mdiFormatItalic} {...props} />}
+                    </ItalicControl>
+                    <StrikethroughControl>
+                      {(props) => (
+                        <Icon path={mdiFormatStrikethrough} {...props} />
+                      )}
+                    </StrikethroughControl>
+                    <UnderlineControl>
+                      {(props) => <Icon path={mdiFormatUnderline} {...props} />}
+                    </UnderlineControl>
+                    <HeadingControl heading="h1">
+                      {(props) => <Icon path={mdiFormatHeader1} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h2">
+                      {(props) => <Icon path={mdiFormatHeader2} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h3">
+                      {(props) => <Icon path={mdiFormatHeader3} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h4">
+                      {(props) => <Icon path={mdiFormatHeader4} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h5">
+                      {(props) => <Icon path={mdiFormatHeader5} {...props} />}
+                    </HeadingControl>
+                    <HeadingControl heading="h6">
+                      {(props) => <Icon path={mdiFormatHeader6} {...props} />}
+                    </HeadingControl>
+                    <LinkControl>
+                      {(props) => <Icon path={mdiLink} {...props} />}
+                    </LinkControl>
+                    <TextColorControl
+                      colors={[
+                        "#1e2139",
+                        "#ff5c00",
+                        "#cc3e4a",
+                        "#ffc854",
+                        "#31b27b",
+                        "#2d5c7c",
+                        "#237777",
+                        "#376c6c",
+                        "#63a5a5",
+                        "#9d5961",
+                      ]}
+                    >
+                      {(props) => <Icon path={mdiFormatColorText} {...props} />}
+                    </TextColorControl>
+                  </ToolsWrapper>
+                </StyledToolBox>
+              </HoverTools>
+              <Editor
+                spellCheck={false}
+                style={{ overflow: "auto", minHeight: 500 }}
+              ></Editor>
+            </div>
+          </Chief>
+        </ContentStyle>
+      </ThemeProvider>
       <div style={{ flex: 1 }}>
         <ContentStyle>
           <ChiefPresentation

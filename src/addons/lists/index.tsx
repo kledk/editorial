@@ -4,7 +4,6 @@ import { ChiefElement, InjectedRenderElement } from "../../chief/chief";
 import { useRenderElement } from "../../chief/hooks/use-render-element";
 import { useOnKeyDown } from "../../chief/hooks/use-on-key-down";
 import { usePlugin } from "../../chief/hooks/use-plugin";
-import { renderElement } from "../../element-renderer";
 import { Editor, Transforms, Element, Range, Node } from "slate";
 import { ReactEditor } from "slate-react";
 import { isElementEmpty } from "../../element-utils";
@@ -13,6 +12,7 @@ import { getAncestor, getActiveNode } from "../../utils";
 import { AddonProps } from "../../addon";
 import styled from "styled-components";
 import { iPresenter } from "../../chief";
+import { renderElement } from "../../chief/render/element-renderer";
 
 export const TYPE_LIST_ITEM = "list-item";
 export const TYPE_UNORDERED_LIST = "unordered-list";

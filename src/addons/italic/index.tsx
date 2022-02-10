@@ -1,6 +1,6 @@
 import React from "react";
 import { AddonProps } from "../../addon";
-import { renderLeaf } from "../../leaf-renderer";
+import { renderLeaf } from "../../chief/render/leaf-renderer";
 import { MarkBtn, toggleFormat } from "../../mark-button";
 import { useRenderLeaf } from "../../chief/hooks/use-render-leaf";
 import { useOnKeyDown } from "../../chief/hooks/use-on-key-down";

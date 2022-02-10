@@ -8,6 +8,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig(({ command }) => {
   return {
     build: {
+      sourcemap: true,
       lib: {
         entry: path.resolve(__dirname, "src/index.ts"),
         name: "ChiefEditor",
@@ -15,25 +16,26 @@ export default defineConfig(({ command }) => {
         fileName: (format) => `chief-editor.${format}.js`,
       },
       rollupOptions: {
-        // make sure to externalize deps that shouldn't be bundled
-        // into your library
-        external: ["react", "react-dom", "styled-components"],
+        external: ["react", "react-dom", "styled-components", "slate", "slate-react", "slate-history"],
         output: {
-          // Provide global variables to use in the UMD build
-          // for externalized deps
           globals: {
             react: "React",
             "react-dom": "ReactDOM",
+            "styled-components": "styled",
+            "slate": "slate",
+            "slate-react": "slatereact",
+            "slate-history": "slatehistory"
           },
         },
       },
     },
     plugins: [
+      ViteAliases({ dir: "src", useTypescript: true }),
       ...(command === "serve"
         ? [react()]
         : [
-            ViteAliases(),
             typescript({
+              outputToFilesystem: false,
               rootDir: path.resolve(__dirname, "src"),
               declaration: true,
               declarationDir: path.resolve(__dirname, "dist"),

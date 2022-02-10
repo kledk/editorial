@@ -9,15 +9,10 @@ export const ContentStyle = styled.div<{
   flex: 1;
   flex-direction: column;
   font-family: "Source Sans Pro", sans-serif;
-  color: white;
+  color: black;
   /* font-size: calc((25vw - 4.5rem) / 7); */
 
-  font-size: ${({ width }) => {
-    const ratio = devicePixelRatio * 20;
-    return typeof width === "string"
-      ? `calc(${width}/${ratio})`
-      : `${width / ratio}px`;
-  }};
+  font-size: 14px;
   h1,
   h2,
   p {

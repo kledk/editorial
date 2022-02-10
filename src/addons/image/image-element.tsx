@@ -13,7 +13,7 @@ import { ToolbarBtn } from "../../ToolbarBtn";
 import { StyledFocusToolBtn } from "../../ui/StyledFocusToolbar";
 import { ChiefRenderElementProps } from "../../chief/chief";
 import { UiWrap } from "../../ui/ui-wrap";
-import ReactResizeDetector from "react-resize-detector/lib/";
+import ReactResizeDetector from "react-resize-detector";
 import { useChief } from "../../chief/hooks/use-chief";
 
 export const ImageBlock = (
@@ -40,10 +40,10 @@ export const ImageBlock = (
           editor,
           {
             url: embedUrl,
-            align: "center"
+            align: "center",
           },
           {
-            at: ReactEditor.findPath(editor, element)
+            at: ReactEditor.findPath(editor, element),
           }
         );
         if (isReplacing) {
@@ -69,15 +69,15 @@ export const ImageBlock = (
     onOpenFileRequest && onOpenFileRequest();
   }, [onOpenFileRequest]);
 
-  const handleResize = useCallback((w, h) => {
+  const handleResize = useCallback((w?: number, h?: number) => {
     Transforms.setNodes(
       editor,
       {
         width: w,
-        height: h
+        height: h,
       },
       {
-        at: ReactEditor.findPath(editor, element)
+        at: ReactEditor.findPath(editor, element),
       }
     );
   }, []);
@@ -86,10 +86,10 @@ export const ImageBlock = (
     Transforms.setNodes(
       editor,
       {
-        align
+        align,
       },
       {
-        at: ReactEditor.findPath(editor, element)
+        at: ReactEditor.findPath(editor, element),
       }
     );
   }, []);
@@ -118,21 +118,19 @@ export const ImageBlock = (
               ? "center"
               : props.element.align === "left"
               ? "flex-start"
-              : "flex-end"
+              : "flex-end",
         }}
         contentEditable={false}
         onClick={handleClick}
       >
-        <ReactResizeDetector
-          onResize={(w: number, h: number) => handleResize(w, h)}
-        >
+        <ReactResizeDetector onResize={(w, h) => handleResize(w, h)}>
           <div
             style={{
               resize: readOnly ? "none" : "vertical",
               overflow: "hidden",
               width: "auto",
               height: element.height,
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             <WithAttentionToolbar
@@ -143,7 +141,7 @@ export const ImageBlock = (
                     Replace
                   </StyledFocusToolBtn>
                   <ToolBtnPopup
-                    renderContent={setShow => (
+                    renderContent={(setShow) => (
                       <StyledToolBox>
                         {/* <ToolbarBtn>Copy address</ToolbarBtn> */}
                         {/* <ToolbarBtn>Resize</ToolbarBtn> */}
@@ -179,7 +177,7 @@ export const ImageBlock = (
                         </ToolbarBtn>
                       </StyledToolBox>
                     )}
-                    renderToolBtn={tprops => (
+                    renderToolBtn={(tprops) => (
                       <StyledFocusToolBtn {...tprops}>
                         <span style={{}}>⚙︎</span>
                       </StyledFocusToolBtn>
@@ -195,7 +193,7 @@ export const ImageBlock = (
                   objectFit: "cover",
                   height: element.height,
                   width: "100%",
-                  display: "block"
+                  display: "block",
                 }}
                 alt={element.caption}
                 src={src}
@@ -232,7 +230,7 @@ export const ImageBlock = (
               <InputWrapper style={{ width: "50%" }}>
                 <Input
                   value={embedUrl}
-                  onChange={e => setEmbedUrl(e.target.value)}
+                  onChange={(e) => setEmbedUrl(e.target.value)}
                   placeholder="Paste link"
                 ></Input>
               </InputWrapper>
@@ -256,7 +254,7 @@ export const ImageBlock = (
 };
 
 export const StyledImageEmptyContainer = styled(UiWrap)`
-  background-color: ${props => props.theme.colors.gray[300]};
+  background-color: ${(props) => props.theme.colors.gray[300]};
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -271,7 +269,7 @@ export const StyledImageEmptyContainer = styled(UiWrap)`
   }
   h2,
   p {
-    color: ${props => props.theme.colors.gray[600]};
+    color: ${(props) => props.theme.colors.gray[600]};
     user-select: none;
   }
 `;

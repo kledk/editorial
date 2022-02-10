@@ -11,7 +11,6 @@ import {
   Transforms,
 } from "slate";
 import { useSlate, useSlateStatic } from "slate-react";
-import element from "slate-react/dist/components/element";
 import { useOnKeyDown, usePlugin } from "../../chief";
 import { getActiveNode, getNode } from "../../utils";
 
@@ -23,7 +22,7 @@ export type EnforcedLayout = {
 export function EnforceLayoutAddon(props: { layout: EnforcedLayout[] }) {
   const { layout } = props;
   const editor = useSlate();
-  
+
   useEffect(() => Editor.normalize(editor, { force: true }), [layout]);
   usePlugin({
     normalizeNode: (normalizeNode, editor) => ([currentNode, currentPath]) => {

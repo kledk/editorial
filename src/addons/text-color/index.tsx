@@ -8,7 +8,7 @@ import {
   usePlugin,
   useRenderLeaf,
 } from "../../chief";
-import { renderLeaf } from "../../leaf-renderer";
+import { renderLeaf } from "../../chief/render/leaf-renderer";
 import { StyledToolBox } from "../../ui/StyledToolBox";
 import { ToolbarBtn } from "../../ToolbarBtn";
 import { ToolBtnPopup } from "../../ToolBtnPopup";
