@@ -1,6 +1,11 @@
 {
+  "version": "0.0.5",
+  "scripts": {
+    "version:all:patch": "yarn workspaces foreach -p --no-private version patch",
+    "version:all:minor": "yarn workspaces foreach -p --no-private version minor",
+    "version:all:major": "yarn workspaces foreach -p --no-private version major"
+  },
   "packageManager": "yarn@3.1.1",
-  "private": true,
   "workspaces": [
     "packages/**"
   ],

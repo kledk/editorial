@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/addons/strikethrough/index.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,aAAa,CAAC;AAQzC,OAAO,EAAE,UAAU,EAAE,MAAM,gCAAgC,CAAC;AAC5D,OAAO,EAAE,YAAY,EAAwB,MAAM,sBAAsB,CAAC;AAI1E,wBAAgB,oBAAoB,CAAC,KAAK,EAAE,YAAY,sBAsBvD;AAUD,wBAAgB,kBAAkB,CAAC,KAAK,EAAE,UAAU,QAYnD;yBAZe,kBAAkB"}

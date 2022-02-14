@@ -1,1 +1,0 @@
-{"version":3,"file":"register-void.d.ts","sourceRoot":"","sources":["../../../src/chief/utils/register-void.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,OAAO,CAAC;AAChC,OAAO,EAAE,QAAQ,EAAE,MAAM,aAAa,CAAC;AAEvC,wBAAgB,gBAAgB,CAAC,CAAC,SAAS,OAAO,GAAG,OAAO,EAC1D,YAAY,EAAE,MAAM,GAAG,CAAC,CAAC,OAAO,EAAE,CAAC,KAAK,OAAO,CAAC,GAC/C,QAAQ,CAAC,QAAQ,CAAC,CAOpB"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/addons/underline/index.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,aAAa,CAAC;AAOzC,OAAO,EAAE,UAAU,EAAE,MAAM,gCAAgC,CAAC;AAE5D,OAAO,EAAE,YAAY,EAAwB,MAAM,sBAAsB,CAAC;AAI1E,wBAAgB,gBAAgB,CAAC,KAAK,EAAE,YAAY,sBAuBnD;AAUD,wBAAgB,cAAc,CAAC,KAAK,EAAE,UAAU,QAY/C;yBAZe,cAAc"}

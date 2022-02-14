@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/addons/italic/index.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,aAAa,CAAC;AAQzC,OAAO,EAAE,UAAU,EAAE,MAAM,gCAAgC,CAAC;AAC5D,OAAO,EAAE,YAAY,EAAwB,MAAM,sBAAsB,CAAC;AAI1E,wBAAgB,aAAa,CAAC,KAAK,EAAE,YAAY,sBAsBhD;AAUD,wBAAgB,WAAW,CAAC,KAAK,EAAE,UAAU,QAY5C;yBAZe,WAAW"}

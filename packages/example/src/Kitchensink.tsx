@@ -2,35 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Editor,
   Chief,
-  // Addons
-  HeadingsAddon,
-  BoldAddon,
-  ItalicAddon,
-  UnderlineAddon,
-  StrikethroughAddon,
-  ImageAddon,
-  ResetToParagraphAddon,
-  PreventNewlineAddon,
-  ListsAddon,
-  BlockTabAddon,
-  LabelsAddon,
-  // Block toolbar addon
-  BlockInsert,
   InputWrapper,
-  // Presentation
-  BoldControl,
-  HeadingControl,
-  ItalicControl,
-  StrikethroughControl,
-  UnderlineControl,
-  HoverTools,
-  ImageControl,
-  ListControl,
-  TextColorAddon,
-  TextColorControl,
-  LinkAddon,
-  LinkControl,
-  ParagraphControl,
   RenderControlProps,
   StyledToolBox,
   ToolsWrapper,
@@ -39,8 +11,10 @@ import {
   useOnKeyDown,
   getNodeFromSelection,
   defaultTheme,
-} from "@react-chief-editor/core";
-import { ParagraphAddon } from "@react-chief-editor/text";
+} from "@editorial/core";
+import { ParagraphAddon, ParagraphControl } from "@editorial/text";
+import { BlockInsert } from "@editorial/ui-block-insert-side-control";
+import { HoverTools } from "@editorial/ui-toolbar-hover";
 import {
   Node,
   Element,
@@ -170,9 +144,9 @@ function App() {
       >
         <ContentStyle>
           <Chief value={value} onChange={(value) => setValue(value)}>
-            <LabelsAddon labels={editorLabels} />
+            {/* <LabelsAddon labels={editorLabels} /> */}
             <ParagraphAddon />
-            <BoldAddon />
+            {/* <BoldAddon />
             <ItalicAddon />
             <UnderlineAddon />
             <StrikethroughAddon />
@@ -182,7 +156,7 @@ function App() {
             <PreventNewlineAddon />
             <LinkAddon />
             <ListsAddon />
-            <TextColorAddon />
+            <TextColorAddon /> */}
             <div
               style={{
                 marginLeft: 40,
@@ -194,7 +168,7 @@ function App() {
                     <ParagraphControl>
                       {(props) => <Icon path={mdiFormatParagraph} {...props} />}
                     </ParagraphControl>
-                    <HeadingControl heading="h1">
+                    {/* <HeadingControl heading="h1">
                       {(props) => <Icon path={mdiFormatHeader1} {...props} />}
                     </HeadingControl>
                     <HeadingControl heading="h2">
@@ -224,14 +198,14 @@ function App() {
                     </ListControl>
                     <ImageControl>
                       {(props) => <Icon path={mdiImage} {...props} />}
-                    </ImageControl>
+                    </ImageControl> */}
                   </ToolsWrapper>
                 </StyledToolBox>
               </BlockInsert>
               <HoverTools>
                 <StyledToolBox>
                   <ToolsWrapper>
-                    <BoldControl>
+                    {/* <BoldControl>
                       {(props) => <Icon path={mdiFormatBold} {...props} />}
                     </BoldControl>
                     <ItalicControl>
@@ -281,7 +255,7 @@ function App() {
                       ]}
                     >
                       {(props) => <Icon path={mdiFormatColorText} {...props} />}
-                    </TextColorControl>
+                    </TextColorControl> */}
                   </ToolsWrapper>
                 </StyledToolBox>
               </HoverTools>
@@ -299,15 +273,15 @@ function App() {
             value={value}
             presenters={[
               ParagraphAddon.Presenter,
-              BoldAddon.Presenter,
-              ItalicAddon.Presenter,
-              StrikethroughAddon.Presenter,
-              UnderlineAddon.Presenter,
-              HeadingsAddon.Presenter,
-              LinkAddon.Presenter,
-              ListsAddon.Presenter,
-              ImageAddon.Presenter,
-              TextColorAddon.Presenter,
+              // BoldAddon.Presenter,
+              // ItalicAddon.Presenter,
+              // StrikethroughAddon.Presenter,
+              // UnderlineAddon.Presenter,
+              // HeadingsAddon.Presenter,
+              // LinkAddon.Presenter,
+              // ListsAddon.Presenter,
+              // ImageAddon.Presenter,
+              // TextColorAddon.Presenter,
             ]}
           ></ChiefPresentation>
         </ContentStyle>

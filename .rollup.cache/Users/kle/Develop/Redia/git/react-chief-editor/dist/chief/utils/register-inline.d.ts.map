@@ -1,1 +1,0 @@
-{"version":3,"file":"register-inline.d.ts","sourceRoot":"","sources":["../../../src/chief/utils/register-inline.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,OAAO,CAAC;AAChC,OAAO,EAAE,QAAQ,EAAE,MAAM,aAAa,CAAC;AAEvC,wBAAgB,kBAAkB,CAChC,YAAY,EAAE,MAAM,GAAG,CAAC,CAAC,OAAO,EAAE,OAAO,KAAK,OAAO,CAAC,GACrD,QAAQ,CAAC,UAAU,CAAC,CAMtB"}

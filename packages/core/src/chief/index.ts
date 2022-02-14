@@ -7,3 +7,6 @@ export * from "./key-handler";
 export * from "./hooks/use-plugin";
 export * from "./hooks/use-render-element";
 export * from "./hooks/use-render-leaf";
+export * from "./hooks/use-decoration";
+export * from "./hooks/use-hovered-node";
+export * from "./hooks/use-chief";
