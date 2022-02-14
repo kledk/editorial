@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Editor,
-  Chief,
+  Editorial,
   RenderControlProps,
   ChiefPresentation,
   usePlugin,
@@ -146,7 +146,7 @@ function App() {
         })}
       >
         <ContentStyle>
-          <Chief value={value} onChange={(value) => setValue(value)}>
+          <Editorial value={value} onChange={(value) => setValue(value)}>
             {/* <LabelsAddon labels={editorLabels} /> */}
             <ParagraphAddon />
             {/* <BoldAddon />
@@ -267,7 +267,7 @@ function App() {
                 style={{ overflow: "auto", minHeight: 500 }}
               ></Editor>
             </div>
-          </Chief>
+          </Editorial>
         </ContentStyle>
       </ThemeProvider>
       <div style={{ flex: 1 }}>

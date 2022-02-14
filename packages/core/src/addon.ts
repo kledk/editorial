@@ -1,7 +1,7 @@
 import { Editor } from "slate";
 import {
   InjectedLabels
-} from "./chief/chief";
+} from "./editorial/editorial";
 
 type OnPluginMap = {
   [key in keyof Editor]?: (

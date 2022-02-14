@@ -15,3 +15,4 @@ export * from "./tool-btn-popup";
 export * from "./tool-divider";
 export * from "./tools-wrapper";
 export * from "./toolbar-btn";
+export * from "./element-wrapper";

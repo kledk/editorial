@@ -21,14 +21,14 @@ declare module "*.svg" {
   export { svgComponent as ReactComponent };
 }
 
-export type ChiefEditor = BaseEditor & ReactEditor & HistoryEditor;
+export type EditorialEditor = BaseEditor & ReactEditor & HistoryEditor;
 
 type CustomText = { text: string };
 type CustomElement = { type: string; children: CustomText[], [x: string]: any };
 
 declare module "slate" {
   interface CustomTypes {
-    Editor: ChiefEditor;
+    Editor: EditorialEditor;
     Element: CustomElement;
     Text: CustomText;
   }

@@ -1,6 +1,6 @@
 {
   "name": "@editorial/core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extendable rich-text editor.",
   "author": "kledk",
   "license": "MIT",
@@ -11,12 +11,12 @@
   "files": [
     "dist"
   ],
-  "main": "dist/chief-editor.umd.js",
-  "module": "dist/chief-editor.es.js",
+  "main": "dist/editorial-editor.umd.js",
+  "module": "dist/editorial-editor.es.js",
   "exports": {
     ".": {
-      "import": "./dist/chief-editor.es.js",
-      "require": "./dist/chief-editor.umd.js"
+      "import": "./dist/editorial-editor.es.js",
+      "require": "./dist/editorial-editor.umd.js"
     }
   },
   "source": "src/index.ts",
@@ -41,9 +41,6 @@
     "is-hotkey": "^0.2.0",
     "is-url": "^1.2.4",
     "lodash": "^4.17.21",
-    "react-overlays": "^5.1.1",
-    "react-popper": "^2.2.5",
-    "react-resize-detector": "^7.0.0",
     "use-error-boundary": "^2.0.4"
   },
   "peerDependencies": {

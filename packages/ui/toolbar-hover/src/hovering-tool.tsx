@@ -5,7 +5,7 @@ import { Popper } from "react-popper";
 import { VirtualElement } from "@popperjs/core";
 import {
   getNodeFromSelection,
-  useChief,
+  useEditorial,
   useSaveSelection,
   useHighlightSelection,
   useOnClickOutside,
@@ -31,7 +31,7 @@ function useProvideContext() {
   const isEmpty = selection && Editor.string(editor, selection) === "";
   const currentNode = getNodeFromSelection(editor, selection);
   const isVoid = Editor.isVoid(editor, currentNode);
-  const isReadOnly = useChief().readOnly;
+  const isReadOnly = useEditorial().readOnly;
   const { savedSelection } = useSaveSelection();
   useHighlightSelection(savedSelection?.current, {
     backgroundColor: "#969696",

@@ -10,7 +10,7 @@ import {
   Range,
 } from "slate";
 import { ReactEditor } from "slate-react";
-import { ChiefEditor } from "./typings";
+import { EditorialEditor } from "./typings";
 
 export const isInside = (rect: ClientRect, x: number, y: number) => {
   return (
@@ -105,7 +105,7 @@ interface State {
   selection: Range | null;
 }
 
-export const useLastFocused = (editor: ChiefEditor) => {
+export const useLastFocused = (editor: EditorialEditor) => {
   const [state, setState] = useState<State>({
     node: null,
     point: null,

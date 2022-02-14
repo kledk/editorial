@@ -11,9 +11,9 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
       lib: {
         entry: path.resolve(__dirname, "src/index.ts"),
-        name: "ChiefEditor",
+        name: "EditorialEditor",
         formats: ["es", "umd"],
-        fileName: (format) => `chief-editor.${format}.js`,
+        fileName: (format) => `editorial-editor.${format}.js`,
       },
       rollupOptions: {
         external: ["react", "react-dom", "slate", "slate-react", "slate-history"],
