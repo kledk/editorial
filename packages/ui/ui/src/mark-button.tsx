@@ -1,6 +1,6 @@
 import React from "react";
 import { useSlate } from "slate-react";
-import { ToolbarBtn } from "./ToolbarBtn";
+import { ToolbarBtn } from "./toolbar-btn";
 import { Editor, Transforms, Text } from "slate";
 
 export function toggleFormat(editor: Editor, format: string) {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledToolBase } from "./StyledToolBox";
+import { StyledToolBase } from "./styled-tool-box";
 import { ButtonBase } from "./button-base";
 
 export const StyledFocusToolBtn = styled(ButtonBase)`

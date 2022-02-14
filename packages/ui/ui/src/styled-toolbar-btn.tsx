@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ButtonBase } from "./button-base";
-import { OverrideTheme } from "../override-theme";
+import { OverrideTheme } from "./override-theme";
 
 export const StyledToolbarBtn = styled<typeof ButtonBase>(ButtonBase)<{
   isActive?: boolean;

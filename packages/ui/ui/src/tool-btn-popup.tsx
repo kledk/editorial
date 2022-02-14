@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Popper, Manager, Reference } from "react-popper";
-import { useOnClickOutside } from "./utils";
-import { useOnKeyDown } from "./chief";
+import { useOnKeyDown, useOnClickOutside } from "@editorial/core";
 
 export function ToolBtnPopup(props: {
   shortcut?: string;

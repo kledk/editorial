@@ -339,7 +339,6 @@ __metadata:
     "@types/lodash": ^4
     "@types/react": ^17
     "@types/react-dom": ^17
-    "@types/styled-components": ^5.1.5
     "@vitejs/plugin-react": ^1.1.1
     cross-env: ^7.0.2
     gh-pages: ^3.1.0
@@ -357,7 +356,6 @@ __metadata:
     slate: ^0.72.8
     slate-history: ^0.66.0
     slate-react: ^0.72.8
-    styled-components: ^5.2.1
     ts-is-present: ^1.1.1
     tslib: ^2.3.1
     typescript: ^4.5.3
@@ -368,7 +366,6 @@ __metadata:
     slate: ">=0.72.8"
     slate-history: ">=0.66.0"
     slate-react: ">=0.72.8"
-    styled-components: ">=5.2.1"
   languageName: unknown
   linkType: soft
 
@@ -453,6 +450,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@editorial/ui-text@workspace:*, @editorial/ui-text@workspace:packages/ui/text":
+  version: 0.0.0-use.local
+  resolution: "@editorial/ui-text@workspace:packages/ui/text"
+  dependencies:
+    "@editorial/core": "workspace:*"
+    "@editorial/ui": "workspace:*"
+    "@editorial/ui-placeholder-hint": "workspace:*"
+    "@rollup/plugin-typescript": ^8.3.0
+    "@types/react": ^17
+    "@types/react-dom": ^17
+    "@types/styled-components": ^5
+    "@vitejs/plugin-react": ^1.2.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: ^5.3.3
+    tslib: ^2.3.1
+    vite: ^2.8.0
+  peerDependencies:
+    "@editorial/core": "workspace:*"
+    "@editorial/ui": "workspace:*"
+    "@editorial/ui-placeholder-hint": "workspace:*"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: "*"
+  languageName: unknown
+  linkType: soft
+
 "@editorial/ui-toolbar-hover@workspace:*, @editorial/ui-toolbar-hover@workspace:packages/ui/toolbar-hover":
   version: 0.0.0-use.local
   resolution: "@editorial/ui-toolbar-hover@workspace:packages/ui/toolbar-hover"
@@ -478,6 +506,68 @@ __metadata:
     react-popper: "*"
     slate: ^0.72.8
     slate-react: ^0.72.8
+  languageName: unknown
+  linkType: soft
+
+"@editorial/ui-toolbars@workspace:packages/ui/toolbars":
+  version: 0.0.0-use.local
+  resolution: "@editorial/ui-toolbars@workspace:packages/ui/toolbars"
+  dependencies:
+    "@editorial/core": "workspace:*"
+    "@rollup/plugin-typescript": ^8.3.0
+    "@types/react": ^17
+    "@types/react-dom": ^17
+    "@types/styled-components": ^5
+    "@vitejs/plugin-react": ^1.2.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-overlays: ^5.1.1
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: ^5.3.3
+    tslib: ^2.3.1
+    vite: ^2.8.0
+  peerDependencies:
+    "@editorial/core": "workspace:*"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-overlays: "*"
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: "*"
+  languageName: unknown
+  linkType: soft
+
+"@editorial/ui@workspace:*, @editorial/ui@workspace:packages/ui/ui":
+  version: 0.0.0-use.local
+  resolution: "@editorial/ui@workspace:packages/ui/ui"
+  dependencies:
+    "@editorial/core": "workspace:*"
+    "@popperjs/core": ^2.11.2
+    "@rollup/plugin-typescript": ^8.3.0
+    "@types/react": ^17
+    "@types/react-dom": ^17
+    "@types/styled-components": ^5
+    "@vitejs/plugin-react": ^1.2.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-overlays: ^5.1.1
+    react-popper: ^2.2.5
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: ^5.3.3
+    tslib: ^2.3.1
+    vite: ^2.8.0
+  peerDependencies:
+    "@editorial/core": "workspace:*"
+    "@popperjs/core": "*"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-overlays: "*"
+    react-popper: "*"
+    slate: ^0.72.8
+    slate-react: ^0.72.8
+    styled-components: "*"
   languageName: unknown
   linkType: soft
 
@@ -765,7 +855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5, @types/styled-components@npm:^5.1.5":
+"@types/styled-components@npm:^5":
   version: 5.1.22
   resolution: "@types/styled-components@npm:5.1.22"
   dependencies:
@@ -1606,7 +1696,9 @@ __metadata:
   dependencies:
     "@editorial/core": "workspace:*"
     "@editorial/text": "workspace:*"
+    "@editorial/ui": "workspace:*"
     "@editorial/ui-block-insert-side-control": "workspace:*"
+    "@editorial/ui-text": "workspace:*"
     "@editorial/ui-toolbar-hover": "workspace:*"
     "@mdi/js": ^6.5.95
     "@mdi/react": ^1.5.0
@@ -3393,7 +3485,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.2.1, styled-components@npm:^5.3.3":
+"styled-components@npm:^5.3.3":
   version: 5.3.3
   resolution: "styled-components@npm:5.3.3"
   dependencies:

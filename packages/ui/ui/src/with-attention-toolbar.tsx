@@ -1,8 +1,8 @@
 import React, { ComponentProps } from "react";
 import { RenderElementProps } from "slate-react";
-import { ElementWrapper } from "../element-wrapper";
-import { ToolsWrapper } from "../ToolsWrapper";
-import { StyledFocusToolbar } from "./StyledFocusToolbar";
+import { ToolsWrapper } from "./tools-wrapper";
+import { StyledFocusToolbar } from "./styled-focus-toolbar";
+import { ElementWrapper } from "@editorial/core";
 
 export function WithAttentionToolbar(
   props: RenderElementProps & {

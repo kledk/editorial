@@ -1,8 +1,8 @@
 import React, { useRef, ReactNode, useState, useEffect } from "react";
 import Overlay from "react-overlays/Overlay";
-import { useGlobalHover, useHover } from "./utils";
+import { useGlobalHover, useHover } from "@editorial/core";
 import styled, { css } from "styled-components";
-import { UiWrap } from "./ui/ui-wrap";
+import { UiWrap } from "./ui-wrap";
 
 export function ElementHoverTip(
   props: {

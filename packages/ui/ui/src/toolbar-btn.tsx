@@ -1,12 +1,10 @@
 import React, { ReactNode } from "react";
-import { StyledToolbarBtn } from "./ui/styled-toolbar-btn";
+import { StyledToolbarBtn } from "./styled-toolbar-btn";
 import Overlay from "react-overlays/Overlay";
-import { Label } from "./chief/chief";
-import { useLabels } from "./chief/hooks/use-labels";
 import { ElementHoverTip } from "./element-hover-tip";
-import { ControlProps } from "./chief/controls";
 import { useTheme } from "styled-components";
 import { defaultTheme } from "./defaultTheme";
+import { ControlProps, useLabels, Label } from "@editorial/core";
 
 export type Ref = HTMLElement;
 

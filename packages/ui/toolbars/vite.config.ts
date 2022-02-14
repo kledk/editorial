@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import path from "path";
-import { ViteAliases } from "vite-aliases";
 import typescript from "@rollup/plugin-typescript";
 import react from "@vitejs/plugin-react";
+import { name } from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -11,25 +11,36 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
       lib: {
         entry: path.resolve(__dirname, "src/index.ts"),
-        name: "ChiefEditor",
+        name: name,
         formats: ["es", "umd"],
-        fileName: (format) => `chief-editor.${format}.js`,
+        fileName: (format) => `main.${format}.js`,
       },
       rollupOptions: {
-        external: ["react", "react-dom", "slate", "slate-react", "slate-history"],
+        external: [
+          "react",
+          "react-dom",
+          "styled-components",
+          "slate",
+          "slate-react",
+          "slate-history",
+          "@editorial/core",
+          "react-overlays",
+        ],
         output: {
           globals: {
             react: "React",
             "react-dom": "ReactDOM",
-            "slate": "slate",
+            "styled-components": "styled",
+            slate: "slate",
             "slate-react": "slatereact",
-            "slate-history": "slatehistory"
+            "slate-history": "slatehistory",
+            "@editorial/core": "reactchiefeditor",
+            "react-overlays": "reactoverlays",
           },
         },
       },
     },
     plugins: [
-      ViteAliases({ dir: "src", useTypescript: true }),
       ...(command === "serve"
         ? [react()]
         : [

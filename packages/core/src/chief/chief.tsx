@@ -6,10 +6,6 @@ import {
   Slate,
 } from "slate-react";
 import { Node, Element, NodeEntry, Range, Descendant } from "slate";
-import merge from "lodash/merge";
-import { ChiefEditorTheme } from "../chief-editor-theme";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "../defaultTheme";
 import { useProvideChiefContext, ChiefContext } from "./chief-context";
 import { useErrorBoundary } from "use-error-boundary";
 import { SavedSelectionProvider } from "./utils/saved-selection";
@@ -65,10 +61,8 @@ export const Chief = React.memo(function (props: {
   children: React.ReactNode;
   readOnly?: boolean;
   id?: string;
-  theme?: ChiefEditorTheme & { [key: string]: any };
 }) {
-  const { children, onChange, value, readOnly, id, theme } = props;
-  const _theme = merge({}, defaultTheme, theme);
+  const { children, onChange, value, readOnly, id} = props;
   const chiefValue = useProvideChiefContext({ readOnly, id });
   const { ErrorBoundary, didCatch, error } = useErrorBoundary();
   if (didCatch) {

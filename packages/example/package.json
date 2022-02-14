@@ -8,7 +8,9 @@
   "dependencies": {
     "@editorial/core": "workspace:*",
     "@editorial/text": "workspace:*",
+    "@editorial/ui": "workspace:*",
     "@editorial/ui-block-insert-side-control": "workspace:*",
+    "@editorial/ui-text": "workspace:*",
     "@editorial/ui-toolbar-hover": "workspace:*",
     "@mdi/js": "^6.5.95",
     "@mdi/react": "^1.5.0",

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { OverrideTheme } from "../override-theme";
+import { OverrideTheme } from "./override-theme";
 
 export const uiStyle = css`
   font-size: 14px;

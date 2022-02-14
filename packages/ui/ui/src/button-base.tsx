@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { OverrideTheme } from "../override-theme";
+import { OverrideTheme } from "./override-theme";
 import { uiStyle } from "./ui-wrap";
 export const ButtonBase = styled.button.attrs({ contentEditable: false })`
   ${uiStyle}

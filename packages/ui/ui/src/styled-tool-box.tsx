@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { OverrideTheme } from "../override-theme";
+import { OverrideTheme } from "./override-theme";
 import { UiWrap } from "./ui-wrap";
 
 export const StyledToolBase = styled(UiWrap)`

@@ -2,19 +2,22 @@ import React, { useState, useEffect } from "react";
 import {
   Editor,
   Chief,
-  InputWrapper,
   RenderControlProps,
-  StyledToolBox,
-  ToolsWrapper,
   ChiefPresentation,
   usePlugin,
   useOnKeyDown,
   getNodeFromSelection,
-  defaultTheme,
 } from "@editorial/core";
-import { ParagraphAddon, ParagraphControl } from "@editorial/text";
+import { ParagraphAddon } from "@editorial/text";
+import { ParagraphControl } from "@editorial/ui-text";
 import { BlockInsert } from "@editorial/ui-block-insert-side-control";
 import { HoverTools } from "@editorial/ui-toolbar-hover";
+import {
+  defaultTheme,
+  ToolsWrapper,
+  StyledToolBox,
+  InputWrapper,
+} from "@editorial/ui";
 import {
   Node,
   Element,

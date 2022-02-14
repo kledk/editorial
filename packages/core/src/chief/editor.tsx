@@ -8,9 +8,7 @@ import {
   RenderElementProps,
   RenderLeafProps
 } from "slate-react";
-import styled from "styled-components";
 import { isNodeActive } from "../utils";
-import { OverrideTheme } from "../override-theme";
 import { ChiefRenderElementProps } from "./chief";
 import { useChief } from "./hooks/use-chief";
 import { handleDecorate } from "./handlers/handleDecorate";
@@ -38,9 +36,7 @@ export const RichEditor = {
   }
 };
 
-const EditorThemeWrapper = styled.div`
-  ${props => OverrideTheme("Editor", props)}
-`;
+
 
 export const Editor = React.memo(
   (
@@ -115,7 +111,6 @@ export const Editor = React.memo(
 
     return (
       <React.Fragment>
-        <EditorThemeWrapper>
           {children}
           <Editable
             onDOMBeforeInput={onDOMBeforeInput}
@@ -130,7 +125,6 @@ export const Editor = React.memo(
             id={`${id}`}
             {...otherProps}
           />
-        </EditorThemeWrapper>
       </React.Fragment>
     );
   }
