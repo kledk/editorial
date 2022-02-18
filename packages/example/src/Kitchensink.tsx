@@ -3,13 +3,17 @@ import {
   Editor,
   Editorial,
   RenderControlProps,
-  ChiefPresentation,
   usePlugin,
   useOnKeyDown,
   getNodeFromSelection,
 } from "@editorial/core";
 import { ParagraphAddon } from "@editorial/text";
-import { ParagraphControl } from "@editorial/ui-text";
+import { EditorialPresentation } from "@editorial/presentation";
+import {
+  ParagraphControl,
+  ParagraphElement,
+  ParagraphPresenter,
+} from "@editorial/ui-text";
 import { BlockInsert } from "@editorial/ui-block-insert-side-control";
 import { HoverTools } from "@editorial/ui-toolbar-hover";
 import {
@@ -148,7 +152,15 @@ function App() {
         <ContentStyle>
           <Editorial value={value} onChange={(value) => setValue(value)}>
             {/* <LabelsAddon labels={editorLabels} /> */}
-            <ParagraphAddon />
+            <ParagraphAddon
+              renderElement={(props) => (
+                <ParagraphElement
+                  hint={"Click to start typing"}
+                  placeholder={"Text"}
+                  {...props}
+                ></ParagraphElement>
+              )}
+            />
             {/* <BoldAddon />
             <ItalicAddon />
             <UnderlineAddon />
@@ -272,10 +284,10 @@ function App() {
       </ThemeProvider>
       <div style={{ flex: 1 }}>
         <ContentStyle>
-          <ChiefPresentation
+          <EditorialPresentation
             value={value}
             presenters={[
-              ParagraphAddon.Presenter,
+              ParagraphPresenter,
               // BoldAddon.Presenter,
               // ItalicAddon.Presenter,
               // StrikethroughAddon.Presenter,
@@ -286,7 +298,7 @@ function App() {
               // ImageAddon.Presenter,
               // TextColorAddon.Presenter,
             ]}
-          ></ChiefPresentation>
+          ></EditorialPresentation>
         </ContentStyle>
       </div>
     </div>

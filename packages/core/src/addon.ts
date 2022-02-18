@@ -2,6 +2,7 @@ import { Editor } from "slate";
 import {
   InjectedLabels
 } from "./editorial/editorial";
+import {ElementTypeMatch} from './editorial/editorial'
 
 type OnPluginMap = {
   [key in keyof Editor]?: (
@@ -21,4 +22,5 @@ export type OnPlugin = Pick<OnPluginMap, KnownKeys<OnPluginMap>>;
 export interface AddonProps {
   name?: string;
   labels?: InjectedLabels;
+  type?: ElementTypeMatch
 }

@@ -1,6 +1,6 @@
 {
-  "name": "@editorial/ui-placeholder-hint",
-  "version": "0.0.5",
+  "name": "@editorial/enforce-layout",
+  "version": "0.0.2",
   "packageManager": "yarn@3.1.1",
   "scripts": {
     "build": "yarn vite build"
@@ -19,23 +19,22 @@
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "peerDependencies": {
+    "@editorial/core": "workspace:*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "slate": "^0.72.8",
-    "slate-react": "^0.72.8",
-    "styled-components": "*"
+    "slate-react": "^0.72.8"
   },
   "devDependencies": {
+    "@editorial/core": "workspace:*",
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/react": "^17",
     "@types/react-dom": "^17",
-    "@types/styled-components": "^5",
     "@vitejs/plugin-react": "^1.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "slate": "^0.72.8",
     "slate-react": "^0.72.8",
-    "styled-components": "^5.3.3",
     "tslib": "^2.3.1",
     "vite": "^2.8.0"
   }

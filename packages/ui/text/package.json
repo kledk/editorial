@@ -1,6 +1,6 @@
 {
   "name": "@editorial/ui-text",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "packageManager": "yarn@3.1.1",
   "scripts": {
     "build": "yarn vite build"
@@ -20,6 +20,7 @@
   "types": "dist/index.d.ts",
   "peerDependencies": {
     "@editorial/core": "workspace:*",
+    "@editorial/presentation": "workspace:*",
     "@editorial/ui": "workspace:*",
     "@editorial/ui-placeholder-hint": "workspace:*",
     "react": "^17.0.2",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@editorial/core": "workspace:*",
+    "@editorial/presentation": "workspace:*",
     "@editorial/ui": "workspace:*",
     "@editorial/ui-placeholder-hint": "workspace:*",
     "@rollup/plugin-typescript": "^8.3.0",

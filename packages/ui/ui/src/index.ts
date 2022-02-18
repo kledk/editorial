@@ -16,3 +16,4 @@ export * from "./tool-divider";
 export * from "./tools-wrapper";
 export * from "./toolbar-btn";
 export * from "./element-wrapper";
+export * from "./use-show-on-focus";

@@ -1,11 +1,11 @@
 import React from "react";
 import { Editor as SlateEditor } from "slate";
 import { useFocused, useSelected, useSlate } from "slate-react";
-import { ChiefRenderElementProps } from "@editorial/core";
+import { EditorialRenderElementProps } from "@editorial/core";
 import { PlaceholderHint } from "@editorial/ui-placeholder-hint";
 
 export function ParagraphElement(
-  props: ChiefRenderElementProps & { placeholder?: string; hint?: string }
+  props: EditorialRenderElementProps & { placeholder?: string; hint?: string }
 ) {
   const editor = useSlate();
   const isFocused = useFocused();

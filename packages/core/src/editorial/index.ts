@@ -1,6 +1,5 @@
 export * from "./editorial";
 export * from "./editor";
-export * from "./editorial-presentation";
 export * from "./hooks/use-labels";
 export * from "./hooks/use-on-key-down";
 export * from "./key-handler";

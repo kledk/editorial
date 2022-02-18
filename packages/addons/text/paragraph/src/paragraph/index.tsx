@@ -1,18 +1,11 @@
-import React, { ReactNode } from "react";
 import {
   useRenderElement,
   AddonProps,
   useLabels,
   ElementTypeMatch,
-  RichEditor,
-  iPresenter,
-  isNodeActive,
-  ControlProps,
-  useIsControlEligable,
+  InjectedRenderElement,
 } from "@editorial/core";
-import { ParagraphElement } from "./paragraph-element";
-
-import { ReactEditor, useSlate } from "slate-react";
+import React from "react";
 
 const TYPE: ElementTypeMatch = "paragraph";
 
@@ -20,46 +13,19 @@ export function ParagraphAddon({
   showHint = true,
   showPlaceholder = true,
   labels,
+  renderElement,
 }: {
   showHint?: boolean;
   showPlaceholder?: boolean;
+  renderElement: InjectedRenderElement["renderElement"];
 } & AddonProps) {
   const [getLabel] = useLabels(labels);
   useRenderElement(
     {
       typeMatch: TYPE,
-      renderElement: (props) => (
-        <ParagraphElement
-          hint={
-            showHint
-              ? getLabel({
-                  key: "elements.paragraph.hint",
-                  defaultLabel: "Click to start typing",
-                })
-              : undefined
-          }
-          placeholder={
-            showPlaceholder
-              ? getLabel({
-                  key: "elements.paragraph.placeholder",
-                  defaultLabel: "Text",
-                })
-              : undefined
-          }
-          {...props}
-        ></ParagraphElement>
-      ),
+      renderElement,
     },
     [getLabel]
   );
   return null;
 }
-
-const ParagraphPresenter: iPresenter = {
-  element: {
-    typeMatch: TYPE,
-    renderElement: (props) => <p>{props.children}</p>,
-  },
-};
-
-ParagraphAddon.Presenter = ParagraphPresenter;

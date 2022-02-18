@@ -1,15 +1,15 @@
 import React, { ReactNode, useCallback, useEffect } from "react";
 import { RenderLeafProps } from "slate-react";
 import { Node } from "slate";
-import { handleRenderElement } from "./handlers/handleRenderElement";
 import {
+  useRenderCore,
+  handleRenderLeaf,
+  handleRenderElement,
   EditorialRenderElementProps,
   InjectedRenderLeaf,
   InjectedRenderElement,
-  EditorialElement
-} from "./editorial";
-import { handleRenderLeaf } from "./handlers/handleRenderLeaf";
-import { useRenderCore } from "./editorial-context";
+  EditorialElement,
+} from "@editorial/core";
 
 export type iPresenter<T extends EditorialElement = any> = {
   element?: InjectedRenderElement<T>;
@@ -25,9 +25,8 @@ interface SlatePresentationContextValue {
   renderLeaf: (props: PresenterLeafProps) => ReactNode;
 }
 
-const SlatePresentationContext = React.createContext<SlatePresentationContextValue | null>(
-  null
-);
+const SlatePresentationContext =
+  React.createContext<SlatePresentationContextValue | null>(null);
 
 function useSlatePresentation() {
   const ctx = React.useContext(SlatePresentationContext);
@@ -48,7 +47,7 @@ function Element(props: { element: PresenterElement }) {
     <React.Fragment>
       {renderElement({
         children: <Children children={element.children} />,
-        element
+        element,
       })}
     </React.Fragment>
   );
@@ -62,7 +61,7 @@ function Leaf({ leaf = { text: "" } }: any) {
       {renderLeaf({
         children: <span>{leaf.text}</span>,
         leaf,
-        text: leaf.text
+        text: leaf.text,
       })}
     </React.Fragment>
   );
@@ -83,11 +82,11 @@ function Children(props: { children: Node[] }) {
   );
 }
 
-export function ChiefPresentation({
+export function EditorialPresentation({
   value = [],
   presenters = [],
   overrideRenderElement,
-  overrideRenderLeaf
+  overrideRenderLeaf,
 }: {
   value: Node[];
   presenters: iPresenter[];
@@ -96,12 +95,8 @@ export function ChiefPresentation({
   ) => JSX.Element | undefined;
   overrideRenderLeaf?: (props: PresenterLeafProps) => JSX.Element | undefined;
 }) {
-  const {
-    renderLeafs,
-    renderElements,
-    injectRenderElement,
-    injectRenderLeaf
-  } = useRenderCore();
+  const { renderLeafs, renderElements, injectRenderElement, injectRenderLeaf } =
+    useRenderCore();
 
   useEffect(() => {
     for (const presenter of presenters) {
@@ -138,7 +133,7 @@ export function ChiefPresentation({
             return handleRenderLeaf(props as any, renderLeafs);
           },
           [renderLeafs]
-        )
+        ),
       }}
     >
       <Children children={value} />

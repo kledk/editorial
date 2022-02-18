@@ -1,12 +1,12 @@
 import {
   ElementTypeMatch,
   RichEditor,
-  iPresenter,
   isNodeActive,
   ControlProps,
   useIsControlEligable,
 } from "@editorial/core";
 import { ToolbarBtn } from "@editorial/ui";
+import { iPresenter } from "@editorial/presentation";
 
 import { ReactEditor, useSlate } from "slate-react";
 
